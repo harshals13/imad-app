@@ -5,12 +5,13 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne={
-    title: 'Article One  | Harsha',
-    heading: 'Aticle One',
-    date: '13 Aug 2017',
-    content: `
-     <p>
+var articles={ 
+    articleOne : {
+        title: 'Article One | Harsha',
+        heading: 'Article one',
+        date: '13 Aug 2017',
+        content : `
+           <p>
             This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
             </p>
             <p>
@@ -19,7 +20,38 @@ var articleOne={
             <p>
             This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
             </p>`
-};
+     },  
+    articleTwo : {
+        title: 'Article Two | Harsha',
+        heading: 'Article Two',
+        date: '13 Oct 2017',
+        content : `
+           <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>
+            <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>
+            <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>`
+    },
+    articleThree : {
+        title: 'Article Three | Harsha',
+        heading: 'Article Three',
+        date: '13 Sep 2017',
+        content : `
+           <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>
+            <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>
+            <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>`
+    };
+     
 
 function createTemplate(data) {
 var title= data.title;
