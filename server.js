@@ -50,7 +50,7 @@ var articles={
             <p>
             This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
             </p>`
-    };
+    }};
      
 
 function createTemplate(data) {
