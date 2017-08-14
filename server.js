@@ -9,7 +9,20 @@ var articleone={
     title: 'Article One  | Harsha',
     heading: 'Aticle One',
     date: '13 Aug 2017',
-    content: ''
+    content: `
+     <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>
+            <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>
+            <p>
+            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            </p>`
+};
+
+var htmlTemplate={
+    
 }
 
 app.get('/', function (req, res) {
