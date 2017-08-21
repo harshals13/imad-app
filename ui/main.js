@@ -23,7 +23,7 @@ buttin.onclick =  funtion(){
    request.open('GET','http://harshasuryavamshi.imad.hasura-app.io/counter',true);
     request.send(null);
 
-};
+}
 //Submit name
 var submit=document.getElementById('submit_btn');
 submit.onclick = function(){
