@@ -1,9 +1,13 @@
 // counter code
 
 var button = document.getElementById('counter');
+
 buttin.onclick =  funtion(){
+    
     // create a request object
+    
     var request = new XMLHttpRequest();
+    
     //Capture the response and store it in a variable
     
     request.onreadystatechange=function(){
@@ -16,4 +20,10 @@ buttin.onclick =  funtion(){
             }
         }
     };
+    //Make the request
+request.open('GET','http://harshasuryavamshi.imad.hasura-app.io/counter',true);
+request.send(null);
 }
+
+
+
