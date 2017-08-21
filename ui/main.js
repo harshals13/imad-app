@@ -47,11 +47,6 @@ submit.onclick = function(){
         }
     };
     
-                }
-            }
-        }
-    }
-}
 
 
 
