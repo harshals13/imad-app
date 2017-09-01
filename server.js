@@ -36,7 +36,7 @@ var articles={
         date: '13 Oct 2017',
         content : `
            <p>
-            This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
+            This is the content for the second article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
             </p>
             <p>
             This is the content for the first article. This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article This is the content for the first article
