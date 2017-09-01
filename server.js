@@ -1,6 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+
+var config = {
+    user: "harshasuryavamshi",
+    database: "harshasuryavamshi",
+    port: "5432",
+    password: process.env.DB_PASSWORD
+};
 
 var app = express();
 app.use(morgan('combined'));
@@ -95,6 +103,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','index.html'));
 });
 
+app.get('/test-db',function(req,res){
+    //make a select request
+    //return a response with a result
+    
+});
 var counter=0;
 app.get('/counter',function(req,res){
     counter=counter+1;
