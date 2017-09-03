@@ -64,12 +64,12 @@ function hash(input, salt){
     
     //how do we create a hash
     var hashed = crypto.pbkdf25(input, salt, 10000, 512, 'sha512');
-    return hashed;
+    return hashed.toString('hex');
 }
 
 app.get('/hash/:input',function(req,res){
     
-    var hashedString = hash(req.params.input);
+    var hashedString = hash(req.params.input,'this-is-some-random-string');
     res.send(hashedString);
 });
 
