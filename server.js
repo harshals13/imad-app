@@ -111,7 +111,11 @@ app.post('/login', function(req,res){
              var dbString = result.rows[0].password;
              var salt = dbSstring.split('$')[2];
              hashedPassword = hash(password, salt); //Creating a hash based on the passsword submitted and the original salt
-             res.send("user successfully created" + username);
+             if(hashedPassword === dbString){
+                 res.send("Credential correct!");
+             }else{
+             res.send(403).send('username/password is invalid');
+                  }
             }
         }   
    });
