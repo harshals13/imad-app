@@ -126,15 +126,26 @@ app.post('/login', function(req,res){
              if(hashedPassword === dbString){
                  res.send("Credential correct!");
                  
-                 
-             }else{
-             res.send(403).send('username/password is invalid');
+                 //Set the session
+                 req.session.auth = {userId: result.rows[0].id};
+                 //set cookie with a session id
+                 //internally on the server side, it maps the session id to an object
+             } else {
+                     res.send(403).send('username/password is invalid');
                   }
             }
         }   
    });
 });
 
+app.get('/check-login',function(req, res){
+   
+   if(req.session && req.session.auth && req.session.userId){
+       res.send('You are logged in: ' + req.session.auth.userId.toString());
+   } else{
+       res.send("you are not logged in");
+   }
+});
 
 var pool = new Pool(config);
 app.get('/test-db',function(req,res){
