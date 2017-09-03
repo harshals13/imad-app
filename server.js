@@ -58,9 +58,11 @@ var htmlTemplate=`
 return htmlTemplate;
 }
 
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui','index.html'));
 });
+
 
 function hash(input, salt){
     
@@ -69,11 +71,13 @@ function hash(input, salt){
     return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
 }
 
+
 app.get('/hash/:input',function(req,res){
     
     var hashedString = hash(req.params.input,'this-is-some-random-string');
     res.send(hashedString);
 });
+
 
 app.post('/create-user', function(req,res){
    //username,password
@@ -94,6 +98,8 @@ app.post('/create-user', function(req,res){
    });
 });
 
+
+
 app.post('/login', function(req,res){
     
    var username = req.body.username;
@@ -113,6 +119,8 @@ app.post('/login', function(req,res){
              var hashedPassword = hash(password, salt); //Creating a hash based on the passsword submitted and the original salt
              if(hashedPassword === dbString){
                  res.send("Credential correct!");
+                 
+                 
              }else{
              res.send(403).send('username/password is invalid');
                   }
