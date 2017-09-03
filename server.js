@@ -104,8 +104,14 @@ app.post('/login', function(req,res){
         if(err){
             res.status(500).send(err.toString());
         } else{
-            res.send("user successfully created" + username);
-            
+            if(result.rows.length === 0){
+                res.send(403).send('username/password is invalid');
+            }else{
+             //match the password
+             var dbString = result.rows[0].password;
+             var salt = dbSstring.split('$')[2];
+             res.send("user successfully created" + username);
+            }
         }   
    });
 });
